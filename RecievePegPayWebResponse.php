@@ -1,10 +1,10 @@
 <?php
-
+ //if  its a valid pegasus response then these values will be set
  $Status = isset($_GET["Status"])?$_GET["Status"]:"";
  $Reason = isset($_GET["Reason"])?$_GET["Reason"]:"";
  $VendorTranId = isset($_GET["VendorID"])?$_GET["VendorID"]:"";
  $DigitalSignature = isset($_GET["DigitalSignature"])?$_GET["DigitalSignature"]:"";
- $SecretKey = "T3rr16132016";
+ $SecretKey = "TheSecretKeyThatWasSharedWithYou";//change this btw
  $DataToVerify= $Status.$Reason.$VendorTranId;
  $HashAlgorithm = 'sha256';
  
