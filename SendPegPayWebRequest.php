@@ -1,15 +1,18 @@
 <?php
 
-//globals
-$VendorCode = "WATOTO-CHURCH";
-$Item_Total = $_POST['Item_Total'];; // Make sure this value is supplied
-$Item_Description = "Offertory";
+//globals...stuff that needs to be defined before we can proceed
+// you should fetch these values from a db or have user supply them
+//depends on your app
+$VendorCode = "TheVendorCodePegasusGaveYou";  //Make sure this value is suppliede.g $_POST['Item_Total']
+$Item_Total = "500"; // Make sure this value is suppliede.g $_POST['Item_Total']
+$Item_Description = "A brief Description of the Item Purchased"; // Make sure this value is suppliede.g $_POST['Item_Total']
 $Currency = "UGX";
-$ReturnUrl = "http://watotochurch.com/transact";
-$Password = "T3rr1613";
-$SecretKey = 'T3rr16132016';
+$ReturnUrl = "http://your.website.com/Reciept.php";//this URL will be called at the end of the payment and customer will be redirected there
+$Password = "ThePasswordPegasusGaveYou"; // Make sure this value is suppliede.g $_POST['Item_Total']
+$SecretKey = 'TheSecretKeyPegasusGaveYou'; //Make sure this value is suppliede.g $_POST['Item_Total']
 $HashAlgorithm = 'sha256';
-$MerchantId = "100138";
+$MerchantId = "TheMerchantCodePegasusGaveYou";// Make sure this value is suppliede.g $_POST['Item_Total']
+$UniqueTransactionId="AUniqueIdentifierForThisTransactionInYourSystem";//maybe fetch this from the database
 
 
 function SendPhpWebRequest($VendorCode,$UniqueTransactionId, $Item_Total, $Item_Description, $ReturnUrl, $Password, $SecretKey, $MerchantId)
